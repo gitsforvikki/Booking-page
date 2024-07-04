@@ -3,9 +3,9 @@ const OfferCard = (props) => {
   return (
     <div className="">
       <div className="container mx-auto ">
-        <div className="max-w-[400px] shadow-2xl pb-10 rounded-2xl">
-          <div className="flex justify-center pt-4 rounded-2xl">
-            <img src={cardInfo.image} alt="" />
+        <div className="max-w-[400px] flex flex-col shadow-2xl pb-10 rounded-2xl">
+          <div className="flex justify-center pt-4 rounded-2xl transition ease-in-out hover:scale-110 duration-500">
+            <img src={cardInfo.image} alt=""  className="p-4"/>
           </div>
 
           <div className=" text-xs px-5 my-5">{cardInfo.type}</div>

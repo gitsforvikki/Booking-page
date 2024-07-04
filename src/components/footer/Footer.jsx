@@ -14,21 +14,21 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-[#1E1E1E]">
+    <div className="bg-[#1E1E1E] rounded-md sm:rounded-none">
       <div className="container mx-auto  py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 mx-4">
           <div className="flex items-center justify-center">
             <div className="flex flex-col gap-y-7">
-              <h1 className="text-white text-2xl font-semibold">
+              <h1 className="text-white text-xl sm:text-2xl font-semibold">
                 Newsletter & Special Promo
               </h1>
-              <div className=" ">
+              <div className=" flex flex-col sm:flex-row gap-y-4 justify-center items-center">
                 <input
-                  className="py-3 outline-none px-3 rounded-xl"
+                  className="py-3 outline-none px-3 rounded-xl sm:rounded-r-none sm:rounded-l-xl"
                   type="text"
                   placeholder="Enter your email address"
                 />
-                <button className="bg-[#65AEF2] text-white  px-5 py-3">
+                <button className="bg-[#65AEF2] text-white rounded-xl sm:rounded-l-none sm:rounded-r-xl w-[100px] sm:w-full px-5 py-2 sm:py-3">
                   Subscribe
                 </button>
               </div>
@@ -40,7 +40,7 @@ const Footer = () => {
               <img src={logo} alt="" className="w-16 h-16 lg:w-20 lg:h-20" />
             </div>
             <div className="">
-              <div className=" grid grid-cols-2 md:grid-cols-3 justify-items-center md:justify-items-start">
+              <div className=" grid grid-cols-2 md:grid-cols-3 justify-items-start sm:justify-items-center">
                 {footerItems.map((item, index) => {
                   return (
                     <div key={index} className="text-white">

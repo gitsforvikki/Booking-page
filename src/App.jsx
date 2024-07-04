@@ -4,34 +4,45 @@ import BookingPannel from "./components/body-compos/BookingPannel";
 import SpecialOffer from "./components/body-compos/SpecialOffer";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/header/Navbar";
+import Amenities from "./components/body-compos/Amenities";
+import Dashboard from "./components/header/Dashboard";
+import Bar from "./components/header/Bar";
+import MobileNav from "./components/header/MobileNav";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const handleVisible = () => setIsVisible(!isVisible);
 
+ 
   return (
     <div className="relative">
       <div
-        className={`h-screen ${
+        className={`h-full ${
           isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
         }`}
       >
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
+        {/* <button onClick={() => setIsDarkMode(!isDarkMode)}>
           Toggle Dark Mode
-        </button>
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold">Welcome to My App</h1>
-          <p className="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-        </div>
-        <div className="absolute top-5 w-full flex justify-center">
-          <Navbar />
-        </div>
-        <BookingPannel />
-        <SpecialOffer />
-        <Footer />
+        </button> */}
 
-        <div className="mt-[100px]">...............</div>
+        {/* <div className="absolute top-5 w-full flex justify-center">
+          <Navbar />
+        </div> */}
+        {isVisible && (
+          <div className="mobile-nav  w-full z-50">
+            <MobileNav />
+          </div>
+        )}
+        <div className="z-30">
+          <Dashboard onhandleClick={handleVisible} />
+        </div>
+        <div className="flex flex-col mx-4 sm:mx-0 bg-slate-100 ">
+          <BookingPannel />
+          <Amenities />
+          <SpecialOffer />
+          <Footer />
+        </div>
       </div>
     </div>
   );

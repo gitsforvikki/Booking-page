@@ -37,33 +37,35 @@ const SpecialOffer = () => {
   ];
 
   return (
-    <div className="container mx-auto flex flex-col gap-y-10  mt-16">
+    <div className="bg-white  py-14">
+    <div className="container mx-auto flex flex-col  ">
       {/* Heading text */}
-      <div className=" flex justify-between items-center">
-        <div className=" flex flex-col gap-y-4 w-4/5">
+      <div className=" flex justify-between items-center w-full mb-8">
+        <div className=" flex flex-col gap-y-4  sm:w-4/5 ">
           <div className="">
-            <h1 className="text-[#65AEF2] text-xl">Special Offers</h1>
+            <h1 className="text-hover-effect text-[#65AEF2] text-xl inline-block">Special Offers</h1>
           </div>
           <div className="">
-            <h1 className="text-4xl">Best offer of the month</h1>
+            <h1 className=" text-3xl sm:text-4xl">Best offer of the month</h1>
           </div>
           <div className="">
-            <p>
+            <p className="">
               Experience Fantastic Benefits and Obtain Better Rates When You
               Make a Direct Booking on Our Official Website
             </p>
           </div>
         </div>
-        <div className="">
-          <h1 className="text-[#65AEF2] text-lg font-semibold">View All</h1>
+        <div className="hidden md:block">
+          <h1 className="text-hover-effect text-[#65AEF2] text-lg font-semibold  ">View All</h1>
         </div>
       </div>
       {/* cards */}
-      <div className="flex justify-evenly ">
+      <div className="flex flex-col sm:flex-row justify-evenly gap-x-4  ">
         {offerData.map((each) => {
-          return <OfferCard cardInfo={each} />;
+          return <OfferCard cardInfo={each}  />;
         })}
       </div>
+    </div>
     </div>
   );
 };

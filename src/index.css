@@ -2,7 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  bottom: 40px;
+  color: white;
+}
 
+/* mobile nav styles */
+.mobile-nav {
+  position: absolute;
 
+  top: 70px;
 
+  text-align: center;
+}
 
+.nav-list-item {
+  @apply flex items-center justify-center bg-gray-200 py-1 text-sm mx-6 rounded-md hover:shadow-md;
+}
+
+/* main nav styles */
+.text-hover-effect {
+  @apply hover:underline hover:decoration-sky-500/40 underline-offset-4 transition ease-in-out hover:scale-105 duration-500;
+}
+
+.dashboard-title {
+  @apply absolute bottom-[5rem] left-[1rem] sm:left-[2.5rem]  text-white text-2xl sm:text-4xl lg:text-7xl  max-w-[766px] w-2/3;
+}
+
+/* booking pannels logo animation styles*/
+.adult-select:hover {
+  .adult-logo {
+    @apply animate-bounce;
+  }
+}
+
+.child-select:hover {
+  .child-logo {
+    @apply animate-bounce;
+  }
+}
